@@ -17,7 +17,7 @@ class EntriesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create entry" do
     assert_difference('Entry.count') do
-      post entries_url, params: { entry: { calories: @entry.calories, carbohydrates: @entry.carbohydrates, fats: @entry.fats, integer: @entry.integer, meal_type: @entry.meal_type, protiens: @entry.protiens } }
+      post entries_url, params: { entry: { calories: @entry.calories, carbohydrates: @entry.carbohydrates, fats: @entry.fats, meal_type: @entry.meal_type, protiens: @entry.protiens } }
     end
 
     assert_redirected_to entry_url(Entry.last)

@@ -1,6 +1,5 @@
-<h1>My Header</h1>
 
-<section class="hero is-success is-fullheight">
+<section class="hero is-link is-small">
   <!-- Hero head: will stick at the top -->
   <div class="hero-head">
     <header class="navbar">
@@ -17,23 +16,7 @@
         </div>
         <div id="navbarMenuHeroC" class="navbar-menu">
           <div class="navbar-end">
-            <a class="navbar-item is-active">
-              Home
-            </a>
-            <a class="navbar-item">
-              Examples
-            </a>
-            <a class="navbar-item">
-              Documentation
-            </a>
-            <span class="navbar-item">
-              <a class="button is-success is-inverted">
-                <span class="icon">
-                  <i class="fab fa-github"></i>
-                </span>
-                <span>Download</span>
-              </a>
-            </span>
+           <%= link_to "Create new entry", new_entry_path, class: "button is-success" %>
           </div>
         </div>
       </div>
@@ -44,7 +27,11 @@
   <div class="hero-body">
     <div class="container has-text-centered">
       <p class="title">
-        Title
+      <% if content_for(:title) %>
+      <%= yield :title %>
+      <% else %>
+      Foodlog
+      <% end %>
       </p>
       <p class="subtitle">
         Subtitle
